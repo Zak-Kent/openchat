@@ -147,8 +147,24 @@ class Streambot:
 
 
 if __name__ == '__main__':
-    bot = Streambot()
-    bot.run_stream(["hotdog", "puppies"])
+    slacker = Slacker(s.SLACK_TOKEN)
+    # keyword = "Python"
+    # print(keyword)
+    looking = True
+    while looking:
+        sentence = input("enter a fake tweet: ")
+
+        if sentence == "quit":
+            looking = False
+        else:
+            slacker.chat.post_message('#test_tweets', sentence)
+            # output = bot.parse_time_room(sentence)
+            # print(output)
+
+
+
+    # bot = Streambot()
+    # bot.run_stream(["hotdog", "puppies"])
     # keyword = "Python"
     # print(keyword)
     # looking = True
